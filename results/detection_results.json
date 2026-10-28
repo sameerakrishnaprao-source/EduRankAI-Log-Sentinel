@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "auth": 57,
+    "access": 53
+  },
+  "findings": [
+    {
+      "rule": "SSH_SUCCESS_AFTER_FAILURES",
+      "severity": "critical",
+      "source_ip": "192.0.2.44",
+      "description": "Login to 'admin' succeeded after 8 recent failures - possible account compromise",
+      "count": 8,
+      "first_seen": "2026-10-27 05:00:00",
+      "last_seen": "2026-10-27 05:01:35",
+      "mitre": "T1078",
+      "evidence": [
+        "successful user: admin via password"
+      ]
+    },
+    {
+      "rule": "WEB_COMMAND_INJECTION",
+      "severity": "high",
+      "source_ip": "192.0.2.150",
+      "description": "1 request(s) matching command_injection patterns",
+      "count": 1,
+      "first_seen": "2026-10-27 10:02:00",
+      "last_seen": "2026-10-27 10:02:00",
+      "mitre": "T1190",
+      "evidence": [
+        "/ping?host=8.8.8.8;cat%20/etc/hosts"
+      ]
+    },
+    {
+      "rule": "SSH_BRUTE_FORCE",
+      "severity": "high",
+      "source_ip": "198.51.100.7",
+      "description": "30 failed SSH logins within 300s",
+      "count": 30,
+      "first_seen": "2026-10-27 03:00:00",
+      "last_seen": "2026-10-27 03:01:56",
+      "mitre": "T1110.001",
+      "evidence": [
+        "targeted users: root"
+      ]
+    },
+    {
+      "rule": "WEB_SQL_INJECTION",
+      "severity": "high",
+      "source_ip": "198.51.100.77",
+      "description": "4 request(s) matching sql_injection patterns",
+      "count": 4,
+      "first_seen": "2026-10-27 10:00:00",
+      "last_seen": "2026-10-27 10:00:03",
+      "mitre": "T1190",
+      "evidence": [
+        "/item.php?id=1%27%20OR%20%271%27=%271",
+        "/item.php?id=1%20UNION%20SELECT%20username,password%20FROM%20users",
+        "/item.php?id=1;%20DROP%20TABLE%20users"
+      ]
+    },
+    {
+      "rule": "SSH_PASSWORD_SPRAY",
+      "severity": "high",
+      "source_ip": "203.0.113.50",
+      "description": "12 distinct usernames tried within 600s",
+      "count": 12,
+      "first_seen": "2026-10-27 04:00:00",
+      "last_seen": "2026-10-27 04:05:30",
+      "mitre": "T1110.003",
+      "evidence": []
+    },
+    {
+      "rule": "WEB_PATH_TRAVERSAL",
+      "severity": "high",
+      "source_ip": "203.0.113.99",
+      "description": "2 request(s) matching path_traversal patterns",
+      "count": 2,
+      "first_seen": "2026-10-27 10:01:05",
+      "last_seen": "2026-10-27 10:01:09",
+      "mitre": "T1190",
+      "evidence": [
+        "/download?file=../../../../etc/passwd",
+        "/download?file=%2e%2e%2f%2e%2e%2fetc%2fshadow"
+      ]
+    },
+    {
+      "rule": "WEB_404_ENUMERATION",
+      "severity": "medium",
+      "source_ip": "192.0.2.200",
+      "description": "40 HTTP 404 responses within 60s",
+      "count": 40,
+      "first_seen": "2026-10-27 10:03:00",
+      "last_seen": "2026-10-27 10:03:39",
+      "mitre": "T1595.003",
+      "evidence": []
+    },
+    {
+      "rule": "WEB_SCANNER_USER_AGENT",
+      "severity": "medium",
+      "source_ip": "198.51.100.77",
+      "description": "Known attack-tool user-agent: sqlmap/1.7.2#stable",
+      "count": 4,
+      "first_seen": "2026-10-27 10:00:00",
+      "last_seen": "2026-10-27 10:00:03",
+      "mitre": "T1595",
+      "evidence": [
+        "/item.php?id=1%27%20OR%20%271%27=%271",
+        "/item.php?id=1%20UNION%20SELECT%20username,password%20FROM%20users",
+        "/item.php?id=1;%20DROP%20TABLE%20users"
+      ]
+    },
+    {
+      "rule": "SSH_BRUTE_FORCE",
+      "severity": "medium",
+      "source_ip": "203.0.113.50",
+      "description": "11 failed SSH logins within 300s",
+      "count": 11,
+      "first_seen": "2026-10-27 04:00:00",
+      "last_seen": "2026-10-27 04:05:00",
+      "mitre": "T1110.001",
+      "evidence": [
+        "targeted users: admin, deploy, ftpuser, git, guest"
+      ]
+    },
+    {
+      "rule": "WEB_XSS",
+      "severity": "medium",
+      "source_ip": "203.0.113.99",
+      "description": "1 request(s) matching xss patterns",
+      "count": 1,
+      "first_seen": "2026-10-27 10:01:00",
+      "last_seen": "2026-10-27 10:01:00",
+      "mitre": "T1189",
+      "evidence": [
+        "/search?q=%3Cscript%3Ealert(1)%3C/script%3E"
+      ]
+    }
+  ]
+}

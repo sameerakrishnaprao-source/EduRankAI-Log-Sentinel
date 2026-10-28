@@ -1,0 +1,37 @@
+test_cli_writes_outputs_and_exit_code (test_detectors.TestEndToEnd.test_cli_writes_outputs_and_exit_code) ... [CRITICAL] SSH_SUCCESS_AFTER_FAILURES   192.0.2.44       Login to 'admin' succeeded after 8 recent failures - possible account compromise
+[HIGH    ] SSH_BRUTE_FORCE              198.51.100.7     30 failed SSH logins within 300s
+[HIGH    ] SSH_PASSWORD_SPRAY           203.0.113.50     12 distinct usernames tried within 600s
+[MEDIUM  ] SSH_BRUTE_FORCE              203.0.113.50     11 failed SSH logins within 300s
+
+4 finding(s) from 57 auth events, 0 web requests.
+ok
+test_expected_detections (test_detectors.TestEndToEnd.test_expected_detections) ... ok
+test_no_false_positives_on_internal_hosts (test_detectors.TestEndToEnd.test_no_false_positives_on_internal_hosts) ... ok
+test_accepted (test_detectors.TestParsers.test_accepted) ... ok
+test_access_line (test_detectors.TestParsers.test_access_line) ... ok
+test_failed_invalid_user (test_detectors.TestParsers.test_failed_invalid_user) ... ok
+test_irrelevant_and_garbage_lines (test_detectors.TestParsers.test_irrelevant_and_garbage_lines) ... ok
+test_parse_file_skips_malformed (test_detectors.TestParsers.test_parse_file_skips_malformed) ... ok
+test_bruteforce_at_threshold (test_detectors.TestSSHRules.test_bruteforce_at_threshold) ... ok
+test_bruteforce_below_threshold (test_detectors.TestSSHRules.test_bruteforce_below_threshold) ... ok
+test_bruteforce_separate_ips_not_combined (test_detectors.TestSSHRules.test_bruteforce_separate_ips_not_combined) ... ok
+test_bruteforce_spread_outside_window (test_detectors.TestSSHRules.test_bruteforce_spread_outside_window) ... ok
+test_old_failures_ignored (test_detectors.TestSSHRules.test_old_failures_ignored) ... ok
+test_single_typo_then_success_is_benign (test_detectors.TestSSHRules.test_single_typo_then_success_is_benign) ... ok
+test_spray_detected (test_detectors.TestSSHRules.test_spray_detected) ... ok
+test_spray_same_user_not_spray (test_detectors.TestSSHRules.test_spray_same_user_not_spray) ... ok
+test_success_after_failures_critical (test_detectors.TestSSHRules.test_success_after_failures_critical) ... ok
+test_404_burst (test_detectors.TestWebRules.test_404_burst) ... ok
+test_benign_requests_no_alerts (test_detectors.TestWebRules.test_benign_requests_no_alerts) ... ok
+test_command_injection (test_detectors.TestWebRules.test_command_injection) ... ok
+test_double_encoded_sqli (test_detectors.TestWebRules.test_double_encoded_sqli) ... ok
+test_few_404s_benign (test_detectors.TestWebRules.test_few_404s_benign) ... ok
+test_scanner_user_agent (test_detectors.TestWebRules.test_scanner_user_agent) ... ok
+test_sqli_variants (test_detectors.TestWebRules.test_sqli_variants) ... ok
+test_traversal_encoded (test_detectors.TestWebRules.test_traversal_encoded) ... ok
+test_xss (test_detectors.TestWebRules.test_xss) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.011s
+
+OK
